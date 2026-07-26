@@ -56,21 +56,16 @@
       <p class="subtitulo">Eres mi persona favorita, mi lugar seguro y mi mayor alegría.</p>
     </header>
 
-    <!-- REPRODUCTOR DE MÚSICA Y CONTADOR DE TIEMPO (2 Columnas Asimétricas) -->
-    <div class="music-player-card grid-half">
-      <div class="music-info">
-        <div class="music-icon" id="music-disc"><i class="fa-solid fa-compact-disc"></i></div>
-        <div>
-          <span class="etiqueta-musica">NUESTRA BANDA SONORA</span>
-          <strong class="titulo-musica">Nuestra Canción Especial 💞</strong>
-        </div>
+    <!-- REPRODUCTOR DE SPOTIFY (Columna Ajustada) -->
+    <div class="seccion-card grid-half">
+      <div class="encabezado-seccion" style="margin-bottom: 12px;">
+        <span class="icono-seccion">🎵</span>
+        <h2>Nuestra Música en Spotify</h2>
       </div>
-      <audio id="cancion-fondo" loop>
-        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-love-112199.mp3" type="audio/mpeg">
-      </audio>
-      <button class="btn-play-romantico" id="btn-musica"><i class="fa-solid fa-play"></i></button>
+      <iframe data-testid="embed-iframe" style="border-radius:12px; width:100%;" src="https://open.spotify.com/embed/playlist/5t59NOVvudze9wE0MrApzH?utm_source=generator&theme=0&si=3f2edb1219e34658" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
 
+    <!-- CONTADOR DE TIEMPO (Columna Ajustada) -->
     <section class="seccion-card grid-half tilt-right">
       <div class="encabezado-seccion">
         <span class="icono-seccion">⏳</span>
@@ -142,7 +137,7 @@
       </div>
     </section>
 
-    <!-- GALERÍA POLAROID (Fila Completa Asimétrica) -->
+    <!-- GALERÍA POLAROID (Con tus fotos foto1.jpg, foto2.jpg, foto3.jpg) -->
     <section class="seccion-card grid-full tilt-right">
       <div class="encabezado-seccion">
         <span class="icono-seccion">📸</span>
@@ -153,25 +148,25 @@
       <div class="polaroid-grid">
         <div class="polaroid-item">
           <div class="pin-polaroid">📌</div>
-          <img class="polaroid-img" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Momento juntos">
+          <img class="polaroid-img" src="foto1.jpg" alt="Momento juntos">
           <div class="polaroid-caption">Tu sonrisa hermosa 😍</div>
         </div>
 
         <div class="polaroid-item">
           <div class="pin-polaroid">📌</div>
-          <img class="polaroid-img" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=400" alt="Amor">
+          <img class="polaroid-img" src="foto2.jpg" alt="Amor">
           <div class="polaroid-caption">Juntos siempre 💞</div>
         </div>
 
         <div class="polaroid-item">
           <div class="pin-polaroid">📌</div>
-          <img class="polaroid-img" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=400" alt="Abrazo">
+          <img class="polaroid-img" src="foto3.jpg" alt="Abrazo">
           <div class="polaroid-caption">Mi lugar seguro 🫂</div>
         </div>
       </div>
     </section>
 
-    <!-- CARTA FINAL INTERACTIVA (Fila Completa / Broche de Oro) -->
+    <!-- CARTA FINAL INTERACTIVA -->
     <section class="seccion-card carta-section-wrapper grid-full">
       <div class="encabezado-seccion">
         <span class="icono-seccion">🎁</span>
