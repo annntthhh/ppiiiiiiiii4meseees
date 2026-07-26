@@ -19,7 +19,7 @@ function actualizarContador() {
   document.getElementById('minutos').innerText = minutos < 10 ? '0' + minutos : minutos;
   document.getElementById('segundos').innerText = segundos < 10 ? '0' + segundos : segundos;
 
-  // Estimado de latidos compartidos
+  // Latidos estimados de corazón (~75 por minuto)
   const latidos = Math.floor((diferencia / 1000) * 1.25);
   document.getElementById('latidos-num').innerText = latidos.toLocaleString();
 }
@@ -31,14 +31,14 @@ actualizarContador();
    2. TÓMBOLA DE RAZONES
    ========================================== */
 const razones = [
-  "Amo cómo tu sonrisa ilumina todo mi día en un segundo. 😊",
-  "La forma tan tierna y linda en la que me tratas siempre. 💞",
-  "Cómo me haces reír incluso cuando estoy de mal genio. 🤭",
-  "Cada abrazo tuyo se siente exactamente como estar en casa. 🫂",
-  "Lo inteligente, dedicado y maravilloso que eres en todo lo que haces. ✨",
-  "Tu mirada hermosa cuando me hablas de cosas que te apasionan. 😍",
+  "Amo la forma tan tierna y especial en la que me miras. 💞",
+  "Tu sonrisa ilumina mi día por completo en un segundo. 😊",
+  "Cada abrazo contigo se siente como el lugar más seguro del mundo. 🫂",
+  "Cómo me haces reír incluso en los momentos más inesperados. 🤭",
+  "Lo inteligente, dedicado y dedicado que eres en todo. ✨",
   "Ese 05 de abril en el cumple de Carla que cambió mi vida para siempre. 🎂",
-  "Simplemente porque eres tú y haces que mi mundo sea infinitamente mejor. ❤️"
+  "La tranquilidad y paz increíble que siento a tu lado. 🌸",
+  "Simplemente porque eres tú, mi chico precioso. ❤️"
 ];
 
 const btnTombola = document.getElementById('btn-tombola-girar');
@@ -50,23 +50,23 @@ btnTombola.addEventListener('click', () => {
     const razonAleatoria = razones[Math.floor(Math.random() * razones.length)];
     textoRazon.innerText = razonAleatoria;
     textoRazon.style.opacity = '1';
-    lanzarCorazonesRpidos();
+    rafagaCorazones();
   }, 300);
 });
 
 /* ==========================================
-   3. CORAZONES Y RASTRO DE CURSOR
+   3. EFECTOS VISUALES & CURSOR
    ========================================== */
 function crearCorazonFondo() {
   const contenedor = document.getElementById('fondo-corazones');
   const corazon = document.createElement('div');
-  corazon.innerText = ['💞', '💖', '✨', '💕', '🌸'][Math.floor(Math.random() * 5)];
+  corazon.innerText = ['💞', '💖', '✨', '🌸', '💕'][Math.floor(Math.random() * 5)];
   corazon.style.position = 'absolute';
   corazon.style.left = Math.random() * 100 + 'vw';
   corazon.style.top = '100vh';
-  corazon.style.fontSize = (Math.random() * 16 + 12) + 'px';
+  corazon.style.fontSize = (Math.random() * 14 + 12) + 'px';
   corazon.style.transition = 'transform 7s linear, opacity 7s';
-  corazon.style.opacity = '0.7';
+  corazon.style.opacity = '0.6';
 
   contenedor.appendChild(corazon);
 
@@ -78,24 +78,24 @@ function crearCorazonFondo() {
   setTimeout(() => { corazon.remove(); }, 7050);
 }
 
-setInterval(crearCorazonFondo, 450);
+setInterval(crearCorazonFondo, 500);
 
-// Rastro del cursor
+// Rastro del ratón/touch
 window.addEventListener('mousemove', (e) => {
-  if (Math.random() < 0.15) {
+  if (Math.random() < 0.12) {
     const spark = document.createElement('div');
     spark.innerText = '💞';
     spark.style.position = 'fixed';
     spark.style.left = e.clientX + 'px';
     spark.style.top = e.clientY + 'px';
-    spark.style.fontSize = '14px';
+    spark.style.fontSize = '12px';
     spark.style.pointerEvents = 'none';
     spark.style.zIndex = '9998';
     spark.style.transition = 'transform 1s, opacity 1s';
     document.body.appendChild(spark);
 
     setTimeout(() => {
-      spark.style.transform = 'translateY(-30px) scale(0)';
+      spark.style.transform = 'translateY(-25px) scale(0)';
       spark.style.opacity = '0';
     }, 50);
 
@@ -104,7 +104,7 @@ window.addEventListener('mousemove', (e) => {
 });
 
 /* ==========================================
-   4. REPRODUCTOR DE MÚSICA Y LOCKSCREEN
+   4. LOCKSCREEN & MÚSICA
    ========================================== */
 const lockscreen = document.getElementById('lockscreen');
 const btnLock = document.getElementById('btn-lock');
@@ -119,9 +119,9 @@ function desbloquear() {
     musicDisc.classList.add('playing');
     btnMusica.innerHTML = '<i class="fa-solid fa-pause"></i>';
   }).catch(() => {
-    console.log("Autoplay bloqueado por navegador");
+    console.log("Autoplay requiere interacción");
   });
-  lanzarFuegosArtificiales();
+  lanzarFuegos();
 }
 
 btnLock.addEventListener('click', desbloquear);
@@ -140,25 +140,25 @@ btnMusica.addEventListener('click', () => {
 });
 
 /* ==========================================
-   5. CARTA Y FUEGOS ARTIFICIALES
+   5. CARTA DE AMOR & FUEGOS
    ========================================== */
-const btnAbrirCarta = document.getElementById('btn-abrir-carta');
+const sobreCerrado = document.getElementById('contenedor-sobre');
 const cartaContenido = document.getElementById('carta-contenido');
 
-btnAbrirCarta.addEventListener('click', () => {
+sobreCerrado.addEventListener('click', () => {
+  sobreCerrado.style.display = 'none';
   cartaContenido.style.display = 'block';
-  btnAbrirCarta.style.display = 'none';
-  lanzarFuegosArtificiales();
-  lanzarCorazonesRpidos();
+  lanzarFuegos();
+  rafagaCorazones();
 });
 
-function lanzarCorazonesRpidos() {
-  for(let i=0; i<25; i++) {
-    setTimeout(crearCorazonFondo, i * 60);
+function rafagaCorazones() {
+  for(let i = 0; i < 20; i++) {
+    setTimeout(crearCorazonFondo, i * 50);
   }
 }
 
-// Fuegos artificiales de corazones 💞
+// Canvas Fuegos Artificiales
 const canvas = document.getElementById('canvas-fuegos');
 const ctx = canvas.getContext('2d');
 let particulas = [];
@@ -170,19 +170,19 @@ function resizeCanvas() {
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas();
 
-function lanzarFuegosArtificiales() {
+function lanzarFuegos() {
   const centerX = canvas.width / 2;
   const centerY = canvas.height / 3;
 
-  for (let i = 0; i < 50; i++) {
+  for (let i = 0; i < 45; i++) {
     particulas.push({
       x: centerX,
       y: centerY,
-      vx: (Math.random() - 0.5) * 12,
-      vy: (Math.random() - 0.5) * 12,
-      size: Math.random() * 20 + 10,
+      vx: (Math.random() - 0.5) * 10,
+      vy: (Math.random() - 0.5) * 10,
+      size: Math.random() * 18 + 10,
       alpha: 1,
-      text: ['💞', '💖', '✨'][Math.floor(Math.random() * 3)]
+      text: ['💞', '✨', '💖'][Math.floor(Math.random() * 3)]
     });
   }
 }
@@ -193,16 +193,14 @@ function animarFuegos() {
   particulas.forEach((p, index) => {
     p.x += p.vx;
     p.y += p.vy;
-    p.vy += 0.08; // Gravedad
+    p.vy += 0.06;
     p.alpha -= 0.015;
 
     ctx.globalAlpha = Math.max(p.alpha, 0);
     ctx.font = `${p.size}px serif`;
     ctx.fillText(p.text, p.x, p.y);
 
-    if (p.alpha <= 0) {
-      particulas.splice(index, 1);
-    }
+    if (p.alpha <= 0) particulas.splice(index, 1);
   });
 
   requestAnimationFrame(animarFuegos);
