@@ -8,7 +8,7 @@
   <!-- Favicon 💞 -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💞</text></svg>">
   
-  <!-- Tipografías Románticas de Alta Calidad -->
+  <!-- Tipografías Románticas -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
   <div id="fondo-corazones"></div>
   <div class="destellos-luz"></div>
 
-  <!-- PANTALLA DE ENTRADA (MÁGICA) -->
+  <!-- PANTALLA DE ENTRADA -->
   <div id="lockscreen">
     <div class="lock-card">
       <span class="badge-brillo">✨ Un detalle especial para ti ✨</span>
@@ -38,16 +38,26 @@
       </div>
       
       <button class="btn-desbloquear-romantico" id="btn-text-unlock">
-        <span>Tocame para empezar</span> <i class="fa-solid fa-sparkles"></i>
+        <span>Tócame para empezar</span> <i class="fa-solid fa-sparkles"></i>
       </button>
     </div>
   </div>
 
-  <!-- CONTENIDO PRINCIPAL -->
+  <!-- CONTENIDO PRINCIPAL EN GRID DINÁMICO -->
   <div class="app-container">
 
-    <!-- REPRODUCTOR MÚSICAL ESTILO CARTA DE AMOR -->
-    <div class="music-player-card">
+    <!-- HERO / BANNER PRINCIPAL (Fila Completa) -->
+    <header class="seccion-card hero-card grid-full">
+      <div class="adorno-esquina top-left">🌸</div>
+      <div class="adorno-esquina top-right">🌸</div>
+      
+      <span class="badge-celebracion">🎉 CELEBRANDO 4 MESES DE PURO AMOR 🎉</span>
+      <h1 class="titulo-principal">Para mi Juan precioso 💞</h1>
+      <p class="subtitulo">Eres mi persona favorita, mi lugar seguro y mi mayor alegría.</p>
+    </header>
+
+    <!-- REPRODUCTOR DE MÚSICA Y CONTADOR DE TIEMPO (2 Columnas Asimétricas) -->
+    <div class="music-player-card grid-half">
       <div class="music-info">
         <div class="music-icon" id="music-disc"><i class="fa-solid fa-compact-disc"></i></div>
         <div>
@@ -61,18 +71,7 @@
       <button class="btn-play-romantico" id="btn-musica"><i class="fa-solid fa-play"></i></button>
     </div>
 
-    <!-- HEADER / BANNER -->
-    <header class="seccion-card hero-card">
-      <div class="adorno-esquina top-left">🌸</div>
-      <div class="adorno-esquina top-right">🌸</div>
-      
-      <span class="badge-celebracion">🎉 CELEBRANDO 4 MESES DE PURO AMOR 🎉</span>
-      <h1 class="titulo-principal">Para mi Juan precioso 💞</h1>
-      <p class="subtitulo">Eres mi persona favorita, mi lugar seguro y mi mayor alegría.</p>
-    </header>
-
-    <!-- CONTADOR DE TIEMPO -->
-    <section class="seccion-card">
+    <section class="seccion-card grid-half tilt-right">
       <div class="encabezado-seccion">
         <span class="icono-seccion">⏳</span>
         <h2>Nuestro Tiempo Juntos</h2>
@@ -80,38 +79,37 @@
       <p class="subtexto-seccion">Contando cada segundo desde aquel inolvidable 06 de Abril</p>
       
       <div class="contador-grid">
-        <div class="time-box">
-          <span class="num" id="dias">00</span>
-          <span class="label">Días</span>
-        </div>
-        <div class="time-box">
-          <span class="num" id="horas">00</span>
-          <span class="label">Horas</span>
-        </div>
-        <div class="time-box">
-          <span class="num" id="minutos">00</span>
-          <span class="label">Minutos</span>
-        </div>
-        <div class="time-box">
-          <span class="num" id="segundos">00</span>
-          <span class="label">Segundos</span>
-        </div>
+        <div class="time-box"><span class="num" id="dias">00</span><span class="label">Días</span></div>
+        <div class="time-box"><span class="num" id="horas">00</span><span class="label">Horas</span></div>
+        <div class="time-box"><span class="num" id="minutos">00</span><span class="label">Minutos</span></div>
+        <div class="time-box"><span class="num" id="segundos">00</span><span class="label">Segundos</span></div>
       </div>
 
       <div class="stats-extra">
-        <div class="stat-card">
-          <i class="fa-solid fa-heart-pulse"></i>
-          <div><strong id="latidos-num">0</strong> latidos de amor</div>
-        </div>
-        <div class="stat-card">
-          <i class="fa-solid fa-infinity"></i>
-          <div>Infinitos recuerdos juntos</div>
-        </div>
+        <div class="stat-card"><i class="fa-solid fa-heart-pulse"></i> <div><strong id="latidos-num">0</strong> latidos</div></div>
+        <div class="stat-card"><i class="fa-solid fa-infinity"></i> <div>Infinitos recuerdos</div></div>
       </div>
     </section>
 
-    <!-- TIMELINE / NUESTRA HISTORIA -->
-    <section class="seccion-card">
+    <!-- TÓMBOLA DE RAZONES (Columna Izquierda) -->
+    <section class="seccion-card grid-half tilt-left">
+      <div class="encabezado-seccion">
+        <span class="icono-seccion">💌</span>
+        <h2>Razones para Amarte</h2>
+      </div>
+      <p class="subtexto-seccion">Presiona el botón para descubrir un motivo de mi amor por ti</p>
+      
+      <div class="tombola-box">
+        <div id="texto-razon">"Presiona el botón de abajo para girar..."</div>
+      </div>
+
+      <button class="btn-tombola" id="btn-tombola-girar">
+        <span>¡Descubrir Razón!</span> <i class="fa-solid fa-dice-d6"></i>
+      </button>
+    </section>
+
+    <!-- NUESTRA HISTORIA (Columna Derecha) -->
+    <section class="seccion-card grid-half">
       <div class="encabezado-seccion">
         <span class="icono-seccion">📖</span>
         <h2>Nuestra Historia de Amor</h2>
@@ -120,38 +118,32 @@
       <div class="timeline">
         <div class="timeline-item left">
           <div class="timeline-card">
-            <div class="timeline-header">
-              <span class="timeline-date">05 de Abril 🎂</span>
-            </div>
+            <span class="timeline-date">05 de Abril 🎂</span>
             <h4>El Primer Flechazo ✨</h4>
-            <p>Nos vimos por primera vez en el cumpleaños de Carla. Cruzamos miradas y algo dentro de mí supo que tu presencia lo cambiaría todo.</p>
+            <p>Nos vimos en el cumple de Carla. Cruzamos miradas y mi corazón supo que serías súper especial.</p>
           </div>
         </div>
 
         <div class="timeline-item right">
           <div class="timeline-card">
-            <div class="timeline-header">
-              <span class="timeline-date">06 de Abril 💞</span>
-            </div>
+            <span class="timeline-date">06 de Abril 💞</span>
             <h4>El Comienzo Oficial 🌹</h4>
-            <p>El día en que decidimos caminar juntos. El inicio de la etapa más bonita, llena de complicidad y cariño sincero.</p>
+            <p>El día que decidimos caminar juntos. El inicio de la etapa más bonita.</p>
           </div>
         </div>
 
         <div class="timeline-item left">
           <div class="timeline-card">
-            <div class="timeline-header">
-              <span class="timeline-date">4 Meses Después 🎉</span>
-            </div>
+            <span class="timeline-date">4 Meses Después 🎉</span>
             <h4>Celebración Adelantada 💖</h4>
-            <p>4 meses creando momentos mágicos a tu lado. Esto es solo una pequeña muestra de lo mucho que te amo.</p>
+            <p>Creando momentos mágicos a tu lado. ¡Esto es solo el comienzo!</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GALERÍA POLAROID -->
-    <section class="seccion-card">
+    <!-- GALERÍA POLAROID (Fila Completa Asimétrica) -->
+    <section class="seccion-card grid-full tilt-right">
       <div class="encabezado-seccion">
         <span class="icono-seccion">📸</span>
         <h2>Instantáneas del Corazón</h2>
@@ -179,25 +171,8 @@
       </div>
     </section>
 
-    <!-- TÓMBOLA DE RAZONES -->
-    <section class="seccion-card">
-      <div class="encabezado-seccion">
-        <span class="icono-seccion">💌</span>
-        <h2>Razones para Amarte</h2>
-      </div>
-      <p class="subtexto-seccion">Presiona el botón para descubrir un motivo de mi amor por ti</p>
-      
-      <div class="tombola-box">
-        <div id="texto-razon">"Presiona el botón de abajo para girar..."</div>
-      </div>
-
-      <button class="btn-tombola" id="btn-tombola-girar">
-        <span>¡Descubrir Razón!</span> <i class="fa-solid fa-dice-d6"></i>
-      </button>
-    </section>
-
-    <!-- CARTA FINAL INTERACTIVA -->
-    <section class="seccion-card carta-section-wrapper">
+    <!-- CARTA FINAL INTERACTIVA (Fila Completa / Broche de Oro) -->
+    <section class="seccion-card carta-section-wrapper grid-full">
       <div class="encabezado-seccion">
         <span class="icono-seccion">🎁</span>
         <h2>Tu Regalo Adelantado</h2>
@@ -228,7 +203,7 @@
       </div>
     </section>
 
-    <footer>
+    <footer class="grid-full">
       Hecho con todo el corazón para Juan 💞 • 2026
     </footer>
 
