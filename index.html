@@ -3,115 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>¡Para mi Juan precioso! 💞🎉</title>
+  <title>Para mi Juan precioso 💞</title>
   
-  <!-- Favicon con el corazón 💞 -->
+  <!-- Favicon 💞 -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💞</text></svg>">
   
-  <!-- Fuentes Elegantes Google Fonts -->
+  <!-- Tipografías Románticas de Alta Calidad -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Iconos FontAwesome -->
+  <!-- FontAwesome Iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Estilos CSS externos -->
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
-  <!-- Canvas para Fuegos Artificiales -->
+  <!-- Capas de efectos de fondo -->
   <canvas id="canvas-fuegos"></canvas>
-
-  <!-- Fondo Corazones -->
   <div id="fondo-corazones"></div>
+  <div class="destellos-luz"></div>
 
-  <!-- PANTALLA DE DESBLOQUEO -->
+  <!-- PANTALLA DE ENTRADA (MÁGICA) -->
   <div id="lockscreen">
-    <div class="badge-celebracion">Regalo Sorpresa Adelantado 🎁</div>
-    <h1 class="titulo-lockscreen">Para Juan Precioso</h1>
-    <p class="subtitulo-lockscreen">Toca el corazón para abrir tu experiencia romántica 💞</p>
-    <div class="corazon-pulsante-inicio" id="btn-lock">💞</div>
-    <button class="btn-desbloquear" id="btn-text-unlock">¡Abrir mi regalo! ✨</button>
+    <div class="lock-card">
+      <span class="badge-brillo">✨ Un detalle especial para ti ✨</span>
+      <h1 class="titulo-entrada">Hola, mi Juan precioso</h1>
+      <p class="subtitulo-entrada">Preparé una pequeña sorpresa para celebrar lo mágico que han sido estos meses juntos...</p>
+      
+      <div class="contenedor-corazon-pulsante">
+        <div class="anillos-pulso"></div>
+        <div class="corazon-inicio" id="btn-lock">💞</div>
+      </div>
+      
+      <button class="btn-desbloquear-romantico" id="btn-text-unlock">
+        <span>Tocame para empezar</span> <i class="fa-solid fa-sparkles"></i>
+      </button>
+    </div>
   </div>
 
   <!-- CONTENIDO PRINCIPAL -->
   <div class="app-container">
 
-    <!-- REPRODUCTOR MÚSICAL -->
+    <!-- REPRODUCTOR MÚSICAL ESTILO CARTA DE AMOR -->
     <div class="music-player-card">
       <div class="music-info">
-        <div class="music-icon" id="music-disc"><i class="fa-solid fa-music"></i></div>
+        <div class="music-icon" id="music-disc"><i class="fa-solid fa-compact-disc"></i></div>
         <div>
-          <strong class="titulo-musica">Nuestra Canción 💞</strong>
-          <span class="subtitulo-musica">Tocando de fondo para ti</span>
+          <span class="etiqueta-musica">NUESTRA BANDA SONORA</span>
+          <strong class="titulo-musica">Nuestra Canción Especial 💞</strong>
         </div>
       </div>
-      <!-- Cambia este link si tienes un mp3 propio en tu repositorio -->
       <audio id="cancion-fondo" loop>
         <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=romantic-love-112199.mp3" type="audio/mpeg">
       </audio>
-      <button class="btn-play" id="btn-musica"><i class="fa-solid fa-play"></i></button>
+      <button class="btn-play-romantico" id="btn-musica"><i class="fa-solid fa-play"></i></button>
     </div>
 
-    <!-- ENCABEZADO -->
-    <header class="seccion-card">
-      <div class="badge-celebracion">🎉 ¡Celebrando 4 Meses! 🎉</div>
-      <h1 class="titulo-principal">Juan precioso 💞</h1>
-      <p class="subtitulo">Cada segundo contigo es mi momento favorito del día</p>
+    <!-- HEADER / BANNER -->
+    <header class="seccion-card hero-card">
+      <div class="adorno-esquina top-left">🌸</div>
+      <div class="adorno-esquina top-right">🌸</div>
+      
+      <span class="badge-celebracion">🎉 CELEBRANDO 4 MESES DE PURO AMOR 🎉</span>
+      <h1 class="titulo-principal">Para mi Juan precioso 💞</h1>
+      <p class="subtitulo">Eres mi persona favorita, mi lugar seguro y mi mayor alegría.</p>
     </header>
 
     <!-- CONTADOR DE TIEMPO -->
     <section class="seccion-card">
-      <h2>Llevamos Juntos ⏳💖</h2>
-      <p class="subtexto-seccion">Desde nuestro día oficial el 06 de Abril</p>
+      <div class="encabezado-seccion">
+        <span class="icono-seccion">⏳</span>
+        <h2>Nuestro Tiempo Juntos</h2>
+      </div>
+      <p class="subtexto-seccion">Contando cada segundo desde aquel inolvidable 06 de Abril</p>
       
       <div class="contador-grid">
-        <div class="time-box"><span class="num" id="dias">00</span><span class="label">Días</span></div>
-        <div class="time-box"><span class="num" id="horas">00</span><span class="label">Horas</span></div>
-        <div class="time-box"><span class="num" id="minutos">00</span><span class="label">Min</span></div>
-        <div class="time-box"><span class="num" id="segundos">00</span><span class="label">Seg</span></div>
+        <div class="time-box">
+          <span class="num" id="dias">00</span>
+          <span class="label">Días</span>
+        </div>
+        <div class="time-box">
+          <span class="num" id="horas">00</span>
+          <span class="label">Horas</span>
+        </div>
+        <div class="time-box">
+          <span class="num" id="minutos">00</span>
+          <span class="label">Minutos</span>
+        </div>
+        <div class="time-box">
+          <span class="num" id="segundos">00</span>
+          <span class="label">Segundos</span>
+        </div>
       </div>
 
       <div class="stats-extra">
         <div class="stat-card">
           <i class="fa-solid fa-heart-pulse"></i>
-          <div><strong id="latidos-num">0</strong> latidos compartidos</div>
+          <div><strong id="latidos-num">0</strong> latidos de amor</div>
         </div>
         <div class="stat-card">
-          <i class="fa-solid fa-comments"></i>
-          <div>+1,000 "Te amo" y risas juntos</div>
+          <i class="fa-solid fa-infinity"></i>
+          <div>Infinitos recuerdos juntos</div>
         </div>
       </div>
     </section>
 
-    <!-- HISTORIA / TIMELINE -->
+    <!-- TIMELINE / NUESTRA HISTORIA -->
     <section class="seccion-card">
-      <h2>Nuestra Historia ✨📖</h2>
+      <div class="encabezado-seccion">
+        <span class="icono-seccion">📖</span>
+        <h2>Nuestra Historia de Amor</h2>
+      </div>
       
       <div class="timeline">
         <div class="timeline-item left">
           <div class="timeline-card">
-            <span class="timeline-date">05 de Abril 🎂</span>
-            <h4>El Primer Flechazo</h4>
-            <p>Nos vimos por primera vez en el cumpleaños de Carla. Cruzamos miradas y algo en mi corazón supo que serías súper especial.</p>
+            <div class="timeline-header">
+              <span class="timeline-date">05 de Abril 🎂</span>
+            </div>
+            <h4>El Primer Flechazo ✨</h4>
+            <p>Nos vimos por primera vez en el cumpleaños de Carla. Cruzamos miradas y algo dentro de mí supo que tu presencia lo cambiaría todo.</p>
           </div>
         </div>
 
         <div class="timeline-item right">
           <div class="timeline-card">
-            <span class="timeline-date">06 de Abril 💞</span>
-            <h4>Nuestra Fecha Oficial</h4>
-            <p>Iniciamos este hermoso camino juntos. El día oficial donde todo comenzó a tener un brillo diferente.</p>
+            <div class="timeline-header">
+              <span class="timeline-date">06 de Abril 💞</span>
+            </div>
+            <h4>El Comienzo Oficial 🌹</h4>
+            <p>El día en que decidimos caminar juntos. El inicio de la etapa más bonita, llena de complicidad y cariño sincero.</p>
           </div>
         </div>
 
         <div class="timeline-item left">
           <div class="timeline-card">
-            <span class="timeline-date">4 Meses Después 🎉</span>
-            <h4>Celebración Adelantada</h4>
-            <p>Construyendo recuerdos, compartiendo risas y enamorándome de ti cada día más. ¡Y lo que nos falta!</p>
+            <div class="timeline-header">
+              <span class="timeline-date">4 Meses Después 🎉</span>
+            </div>
+            <h4>Celebración Adelantada 💖</h4>
+            <p>4 meses creando momentos mágicos a tu lado. Esto es solo una pequeña muestra de lo mucho que te amo.</p>
           </div>
         </div>
       </div>
@@ -119,64 +152,88 @@
 
     <!-- GALERÍA POLAROID -->
     <section class="seccion-card">
-      <h2>Nuestros Recuerdos 📸💞</h2>
-      <p class="subtexto-seccion">Toca cada foto para ver la magia</p>
+      <div class="encabezado-seccion">
+        <span class="icono-seccion">📸</span>
+        <h2>Instantáneas del Corazón</h2>
+      </div>
+      <p class="subtexto-seccion">Pasa el cursor o toca cada fotito para revelar el recuerdo</p>
       
       <div class="polaroid-grid">
         <div class="polaroid-item">
+          <div class="pin-polaroid">📌</div>
           <img class="polaroid-img" src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400" alt="Momento juntos">
           <div class="polaroid-caption">Tu sonrisa hermosa 😍</div>
         </div>
 
         <div class="polaroid-item">
+          <div class="pin-polaroid">📌</div>
           <img class="polaroid-img" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=400" alt="Amor">
           <div class="polaroid-caption">Juntos siempre 💞</div>
         </div>
 
         <div class="polaroid-item">
+          <div class="pin-polaroid">📌</div>
           <img class="polaroid-img" src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=400" alt="Abrazo">
-          <div class="polaroid-caption">Mi lugar favorito 🫂</div>
+          <div class="polaroid-caption">Mi lugar seguro 🫂</div>
         </div>
       </div>
     </section>
 
     <!-- TÓMBOLA DE RAZONES -->
     <section class="seccion-card">
-      <h2>Tómbola de Amor 🎰💖</h2>
-      <p class="subtexto-seccion">Presiona el botón para descubrir una razón por la que te amo</p>
+      <div class="encabezado-seccion">
+        <span class="icono-seccion">💌</span>
+        <h2>Razones para Amarte</h2>
+      </div>
+      <p class="subtexto-seccion">Presiona el botón para descubrir un motivo de mi amor por ti</p>
       
       <div class="tombola-box">
-        <div id="texto-razon">"Toca el botón para girar la tómbola de amor..."</div>
+        <div id="texto-razon">"Presiona el botón de abajo para girar..."</div>
       </div>
 
-      <button class="btn-tombola" id="btn-tombola-girar">¡Girar Tómbola! 🎲💞</button>
+      <button class="btn-tombola" id="btn-tombola-girar">
+        <span>¡Descubrir Razón!</span> <i class="fa-solid fa-dice-d6"></i>
+      </button>
     </section>
 
-    <!-- CARTA SURPRISE FINAL -->
-    <section class="seccion-card">
-      <h2>Tu Regalo Adelantado 🎁✨</h2>
-      <p class="subtexto-carta">Preparé unas palabras especiales desde el fondo de mi corazón</p>
+    <!-- CARTA FINAL INTERACTIVA -->
+    <section class="seccion-card carta-section-wrapper">
+      <div class="encabezado-seccion">
+        <span class="icono-seccion">🎁</span>
+        <h2>Tu Regalo Adelantado</h2>
+      </div>
+      <p class="subtexto-seccion">Escribí algo muy especial para ti...</p>
       
-      <button class="btn-carta-abrir" id="btn-abrir-carta">
-        <i class="fa-solid fa-envelope-open-text"></i> ¡Abrir mi Carta Sorpresa! 💞
-      </button>
+      <div id="contenedor-sobre" class="sobre-cerrado">
+        <div class="solapa"></div>
+        <div class="sello-cera" id="btn-abrir-carta">💞</div>
+        <p class="indicador-abrir">Toca el sello para abrir la carta</p>
+      </div>
 
       <div class="carta-desplegable" id="carta-contenido">
-        <h3>Para mi Juan precioso:</h3>
-        <p>Parece mentira lo rápido que pasa el tiempo cuando uno la pasa increíble. Recordar aquel <strong>05 de abril en el cumpleaños de Carla</strong> me saca una sonrisa enorme, porque fue el día exacto en que te vi por primera vez sin saber la persona tan maravillosa e importante que te volverías en mi vida.</p>
-        <p>Desde el <strong>06 de abril</strong>, cada día a tu lado ha sido un regalo. Gracias por tu ternura, por tus abrazos reconfortantes, por hacerme reír y por ser ese chico tan especial que me llena la vida de luz.</p>
-        <p>4 meses se dicen fácil, pero están llenos de momentos mágicos que guardo como mi tesoro más grande. Te amo muchísimo, mi vida. ¡Felices 4 meses adelantados! 💞✨</p>
-        <div class="firma-final">Con todo mi amor siempre 💕</div>
+        <div class="textura-papel-antiguo">
+          <div class="encabezado-carta">
+            <h3>Para mi Juan precioso:</h3>
+            <span class="fecha-carta">4 Meses Juntos 💞</span>
+          </div>
+          
+          <p>Parece mentira lo rápido que pasa el tiempo cuando uno la pasa increíble. Recordar aquel <strong>05 de abril en el cumpleaños de Carla</strong> me saca una sonrisa enorme, porque fue el día exacto en que te vi por primera vez sin saber la persona tan maravillosa e importante que te volverías en mi vida.</p>
+          
+          <p>Desde el <strong>06 de abril</strong>, cada día a tu lado ha sido un verdadero regalo. Gracias por tu ternura, por tus abrazos que me hacen sentir protegida, por hacerme reír hasta que me duela la barriga y por ser ese chico tan especial que llena mi mundo de luz.</p>
+          
+          <p>Cuatro meses se dicen fácil, pero están llenos de momentos mágicos que guardo como mi tesoro más valioso. Te amo muchísimo, mi vida. ¡Felices 4 meses adelantados!</p>
+          
+          <div class="firma-final">Con todo mi amor siempre, tu chica 💕</div>
+        </div>
       </div>
     </section>
 
     <footer>
-      Hecho con todo el amor del mundo para Juan 💞 • 2026
+      Hecho con todo el corazón para Juan 💞 • 2026
     </footer>
 
   </div>
 
-  <!-- Archivo JavaScript externo -->
   <script src="script.js"></script>
 </body>
 </html>
