@@ -3,44 +3,118 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>¡4 Meses Juntos! ❤️</title>
+  <title>¡Nuestra Historia! 💕✨</title>
   <link rel="stylesheet" href="main.css">
+  <!-- Fuentes elegantes de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Banner Principal -->
+  <!-- Contenedor para corazones flotantes de fondo -->
+  <div id="corazones-fondo"></div>
+
+  <!-- Banner de Bienvenida -->
   <header class="hero">
-    <h1>¡Felices 4 Meses, Mi Vida! 🎉💖</h1>
-    <p>Un pequeño regalo adelantado para el chico más especial del mundo</p>
+    <div class="badge">🎉 ¡Celebrando nuestros 4 Meses! 🎉</div>
+    <h1 class="titulo-principal">Para mi Juan precioso ❤️</h1>
+    <p class="subtitulo">Un pequeño universo creado con amor solo para ti</p>
   </header>
 
-  <!-- Contador -->
-  <section class="contador-container">
-    <h2>Nuestro Tiempo Juntos ⏳</h2>
-    <div id="contador">Cargando nuestro tiempo...</div>
+  <!-- Contador Romántico -->
+  <section class="tarjeta-seccion contador-box">
+    <h2>Llevamos juntos... ⏳💖</h2>
+    <div id="reloj-amor" class="reloj-grid">
+      <div class="tiempo-unidad"><span id="dias">00</span><p>Días</p></div>
+      <div class="tiempo-unidad"><span id="horas">00</span><p>Horas</p></div>
+      <div class="tiempo-unidad"><span id="minutos">00</span><p>Min</p></div>
+      <div class="tiempo-unidad"><span id="segundos">00</span><p>Seg</p></div>
+    </div>
+    <p class="fecha-inicio">Desde aquel inolvidable 6 de Abril 💕</p>
   </section>
 
-  <!-- Galería de Fotos -->
-  <section class="galeria">
-    <h2>Nuestros Momentos Favoritos 📸</h2>
-    <div class="grid-fotos">
-      <div class="polaroid">
-        <img src="foto1.jpg" alt="Momento juntos">
-        <p>Nuestro primer mes 💕</p>
+  <!-- Línea del Tiempo de Nuestra Historia -->
+  <section class="tarjeta-seccion timeline-seccion">
+    <h2>Nuestra Historia ✨📖</h2>
+    <div class="timeline">
+      
+      <div class="timeline-item left">
+        <div class="timeline-contenido">
+          <span class="fecha-tag">05 de Abril 🎂</span>
+          <h3>El primer flechazo</h3>
+          <p>El día que nos vimos por primera vez en el cumpleaños de Carla. El comienzo de todo sin saber lo especial que te volverías para mí. ✨</p>
+        </div>
       </div>
-      <div class="polaroid">
-        <img src="foto2.jpg" alt="Momento juntos">
-        <p>Risas inolvidables ✨</p>
+
+      <div class="timeline-item right">
+        <div class="timeline-contenido">
+          <span class="fecha-tag">06 de Abril 💖</span>
+          <h3>Nuestra Fecha Oficial</h3>
+          <p>El inicio formal de este viaje tan increíble a tu lado. El día en que mi corazón encontró su lugar favorito.</p>
+        </div>
       </div>
-      <!-- Agrega más fotos según quieras -->
+
+      <div class="timeline-item left">
+        <div class="timeline-contenido">
+          <span class="fecha-tag">4 Meses Después 🎉</span>
+          <h3>¡Seguimos Celebrando!</h3>
+          <p>Creciendo juntos, compartiendo risas, momentos inolvidables y construyendo recuerdos hermosos día a día.</p>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Botón Sorpresa para la Carta -->
-  <section class="carta-seccion">
-    <button id="btnCarta">Toca aquí para leer tu regalo 💌</button>
-    <div id="mensajeOculto" class="oculto">
-      <p>¡Aquí va todo tu texto romántico lleno de amor para Juan! 💖✨</p>
+  <!-- Galería estilo Polaroid -->
+  <section class="tarjeta-seccion galeria-seccion">
+    <h2>Nuestros Recuerdos Favoritos 📸💖</h2>
+    <div class="grid-fotos">
+      <div class="polaroid">
+        <div class="foto-frame">
+          <img src="foto1.jpg" alt="Foto con Juan">
+        </div>
+        <p class="polaroid-texto">Mi momento favorito ✨</p>
+      </div>
+
+      <div class="polaroid">
+        <div class="foto-frame">
+          <img src="foto2.jpg" alt="Foto con Juan">
+        </div>
+        <p class="polaroid-texto">Tu sonrisa hermosa 😍</p>
+      </div>
+
+      <div class="polaroid">
+        <div class="foto-frame">
+          <img src="foto3.jpg" alt="Foto juntos">
+        </div>
+        <p class="polaroid-texto">Juntos todo es mejor 💕</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Razones por las que te amo (Cartas desplegables) -->
+  <section class="tarjeta-seccion razones-seccion">
+    <h2>Cosas que amo de ti 💘</h2>
+    <div class="grid-razones">
+      <button class="btn-razon" onclick="revelarRazon(this, 'Tu sonrisa que me arregla cualquier día en un segundo. 😊')">Razon #1 ✨</button>
+      <button class="btn-razon" onclick="revelarRazon(this, 'Lo lindo y atento que eres conmigo siempre. 💌')">Razon #2 💖</button>
+      <button class="btn-razon" onclick="revelarRazon(this, 'Cómo me haces reír incluso cuando estoy seria. 🤭')">Razon #3 🌟</button>
+      <button class="btn-razon" onclick="revelarRazon(this, 'Cada abrazo tuyo que se siente como estar en casa. 🫂')">Razon #4 💕</button>
+    </div>
+  </section>
+
+  <!-- Carta Sorpresa Final -->
+  <section class="tarjeta-seccion carta-seccion">
+    <h2>Tu Regalo Adelantado 🎁✨</h2>
+    <p>Haz clic en el botón de abajo para desplegar tu carta especial</p>
+    <button id="btnAbrirCarta" class="btn-festivo">¡Abrir mi Carta Sorpresa! 💌🎉</button>
+
+    <div id="contenedorCarta" class="carta-oculta">
+      <div class="carta-interior">
+        <h3>Para el chico más hermoso de todos:</h3>
+        <p>Juan precioso, estos 4 meses a tu lado han sido simplemente mágicos. Desde que te vi por primera vez aquel 5 de abril en la fiesta de Carla, algo en mí supo que serías alguien completamente inolvidable.</p>
+        <p>Gracias por cada risa, cada abrazo y por hacer que cada día juntos valga totalmente la pena. Te amo muchísimo y este detalle es solo una muestra de lo especial que eres para mí. ¡Felices (casi) 4 meses mi amor! 💖✨</p>
+        <p class="firma">Con todo mi amor, tu chica 💕</p>
+      </div>
     </div>
   </section>
 
