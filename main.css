@@ -1,0 +1,59 @@
+body {
+  background-color: #fff0f5;
+  color: #4a1525;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+h1 {
+  color: #d63384;
+  font-size: 2.2em;
+  text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.6);
+}
+
+.polaroid {
+  background: white;
+  padding: 12px 12px 20px 12px;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(214, 51, 132, 0.2);
+  transition: transform 0.3s ease;
+  margin: 15px auto;
+  max-width: 280px;
+}
+
+.polaroid:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.polaroid img {
+  width: 100%;
+  border-radius: 4px;
+}
+
+#btnCarta {
+  background: linear-gradient(135deg, #ff69b4, #c71585);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(199, 21, 133, 0.4);
+  transition: transform 0.2s;
+}
+
+#btnCarta:hover {
+  transform: scale(1.08);
+}
+
+.oculto {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  border: 2px dashed #ff69b4;
+}
